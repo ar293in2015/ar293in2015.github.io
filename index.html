@@ -15,6 +15,7 @@
   <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
   <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Questrial" />
   <link rel="stylesheet" type="text/css" href="css/suburst_menu.css">
+  <link rel="stylesheet" type="text/css" href="css/inputStyle.css">
 
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
   <script type="text/javascript" src='http://code.jquery.com/jquery-1.10.2.min.js'></script>
@@ -30,6 +31,7 @@
 <!-- <script src="MAIN.js"></script> -->
 </head>
 <body>
+   <!--
   <nav style="background-color:#D22A21" role="navigation">
     <div class="nav-wrapper container">
       <a class="white-text" id="logo-container" href="index.html" class="brand-logo">Wee Expectations</a>
@@ -37,51 +39,42 @@
         <li><a class="white-text" href="loginPage.html">Login</a></li>
       </ul>
 
+
       <ul id="nav-mobile" class="side-nav">
         <li><a href="loginPage.html">Login</a></li>
       </ul>
       <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
     </div>
-  </nav>
-
-  <div id="index-banner" class="parallax-container">
-    <div class="section no-pad-bot">
-      <div class="container">
-        <br><br>
-        <h1 class="header center white-text text-lighten-2">Wee Expectations</h1>
-
-
-        <br><br>
-
-      </div>
-    </div>
-    <div class="parallax"><img src="https://pbs.twimg.com/media/CkdPfnOXAAA5XI8.jpg" alt="Unsplashed background img 1"></div>
-  </div>
-
-
-  <div  class="container">
-    <div  id = "dashboard" class="section">
-
-      <!--   Icon Section   -->
-      <div class="row">
-         <div ng-controller='dashboardController'>
-            <h4 class="center">Who we are</h4>
-              <p>We are the world.</p>
-
-      </div>
-
-    <div style="color:transparent;">.</div>
-    <div style="color:transparent;">.</div>
-
-
-      </div>
-
-    </div>
-  </div>
+  </nav> -->
 
 
 
-  <div class="parallax-container valign-wrapper">
+
+<ul>
+  <li><a class="active" href="#Home">Home</a></li>
+  <li><a href="inputPage.html">Today</a></li>
+  <li><a href="cal2.html">Calendar</a></li>
+  <li><a href="analytics.html">Analytics</a></li>
+  <li><a href="#risk">Risk Factors</a></li>
+  <li><a href="#sum">Physician Summary</a></li>
+</ul>
+
+
+<center><h1>Wee Expectations</h1></center>
+<center><p>A pregnancy tracker for expecting mothers to track their health and connect to their physicians.</p>
+
+
+<img src="http://media.mnn.com/assets/images/2016/01/cute-baby.jpg.838x0_q80.jpg">
+
+
+<a  class = "ex1" href="loginPage.html"><div style="margin-top: 40px;" class = "loginbox">Login</div></a> 
+
+
+<p>
+  <br><br>
+
+
+ <div class="parallax-container valign-wrapper">
     <div class="section no-pad-bot">
       <div class="container">
         <div class="row center">
@@ -89,42 +82,15 @@
         </div>
       </div>
     </div>
-    <div class="parallax"><img src="http://t.wallpaperweb.org/wallpaper/nature/1600x1200/Landscapes__Nice_Red_Sky.jpg" alt="Unsplashed background img 3"></div>
+    <div class="parallax"><img src="http://wallpapercave.com/wp/JqskLQk.jpg" alt="Unsplashed background img 3"></div>
   </div>
 
-  <footer class="page-footer" style="background-color:#1E6EC6">
-    <div class="container">
-      <div class="row">
-        <div class="col l6 s12">
-          <h5 class="white-text">About Us</h5>
-          <p class="grey-text text-lighten-4">We are a team of Duke students working on this project like it's our full time job.</p>
 
-
-        </div>
-        <div class="col l3 s12">
-          <h5 class="white-text">Team</h5>
-          <ul>
-            <li><a class="white-text" href="#!">Anika</a></li>
-            <li><a class="white-text" href="#!">Grace</a></li>
-            <li><a class="white-text" href="#!">Debbie</a></li>
-          </ul>
-        </div>
-        <div class="col l3 s12">
-          <h5 class="white-text">Role</h5>
-          <ul>
-            <li><a class="white-text" href="#!">Founder</a></li>
-            <li><a class="white-text" href="#!">Founder</a></li>
-             <li><a class="white-text" href="#!">Founder</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
     <div class="footer-copyright">
-      <div class="container">
-      HackDuke 2016 
-      </div>
+      HackDuke 2016 - Anika, Debbie, Grace
     </div>
   </footer>
+
 
   </body>
 </html>
