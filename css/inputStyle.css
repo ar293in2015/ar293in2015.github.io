@@ -2,7 +2,7 @@ body {
     font-family: Helvetica;
 }
 
-h2 {
+h1 {
     font-size: 50px;
 }
 
@@ -20,6 +20,15 @@ button {
     color: white;
     background-color: #00BFFF;
     margin:10px 5px;
+}
+
+button:hover:not(.active) {
+    background-color: #00a9e2;
+}
+
+button.active {
+    color: white;
+    background-color: #00BFFF;
 }
 
 .sympGo {
@@ -91,4 +100,34 @@ button {
 
 p {
 
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #f3f3f3;
+}
+
+li {
+    float: left;
+    height:;
+}
+
+li a {
+    display: block;
+    color: #666;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover:not(.active) {
+    background-color: #ddd;
+}
+
+li a.active {
+    color: white;
+    background-color: #00BFFF;
 }
