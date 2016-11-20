@@ -67,17 +67,22 @@
                   function(response) {
                     console.log('API response', response);
                     $("#fb-profile-picture").append('<img src="' + response.picture.data.url + '"> ');
-                    $("#name").append(response.name);
-                    $("#user-id").append(response.id);
-                    $("#gender").append(response.gender);
-                    $("#email").append(response.email);
+                    // $("#name").append(response.name);
+                    // $("#user-id").append(response.id);
+                    var my_title = "Ms.";
+                    if (response.gender == "male") {
+                      my_title = "Mr.";
+                    }
+                    // $("#gender").append(response.gender);
+                    // $("#email").append(response.email);
+                    $("#continueInfo").append("Welcome " + my_title + " " + response.name + ". Your reports will be sent to " + response.email + ". Click the button below to view your dashboard.");
                     // $("#education").append(response.hometown);
                   }
               );
             }
             jQuery(document).ready(function(){
               console.log("loading fb data");
-              // jQuery("#loadData").click(function(e){
+              jQuery("#loadData").click(function(e){
                 if(typeof(FB) == "undefined") {
                     alert("Facebook SDK not yet loaded please wait.")
                   }
@@ -93,7 +98,7 @@
                 });
 
 
-              // });
+              });
 
             });
         </script>
@@ -143,12 +148,13 @@
 <!-- <div class="fb-login-button" data-scope="email,user_birthday,user_hometown,user_location" data-max-rows="1" data-size="medium" data-show-faces="false" data-auto-logout-link="false"></div>
  --><div class="fb-login-button" data-scope="email" data-max-rows="1" data-size="medium" data-show-faces="false" data-auto-logout-link="false"></div>
 
-<button id='loadData'>Load data</button>
+<button id='loadData'>Start</button>
 <!-- fb-profile-picture: --> <div id="fb-profile-picture"></div>
 <!-- name: --> <div id="name"></div>
-<!-- user-id: --> <div id="user-id"></div>
+<!-- user-id: --> <!-- <div id="user-id"></div> -->
 <div id="gender"></div>
 <div id="email"></div>
+<div id = "continueInfo"></div>
 
         <div>
       <!-- END OF FACEBOOK LOGIN -->
