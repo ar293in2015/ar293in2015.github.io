@@ -302,6 +302,7 @@ function getOffset( el ) {
 }
 
 $(document).ready(function() {
+	console.log("HELP");
 
 	var mousePosX, mousePosY;
 
