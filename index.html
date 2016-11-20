@@ -84,17 +84,26 @@
 
 
 <p> testing </p>
-       <!--    <div id="fb-root"></div>
-            <script>(function(d, s, id) {
+          <div id="fb-root"></div>
+            <script>
+              window.fbAsyncInit = function() {
+                FB.init({
+                  appId      : '200121150436225',
+                  xfbml      : true,
+                  version    : 'v2.6'
+                });
+              };
+
+            (function(d, s, id) {
               console.log("fb test");
               var js, fjs = d.getElementsByTagName(s)[0];
               if (d.getElementById(id)) return;
               js = d.createElement(s); js.id = id;
-              js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8";
+              js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8&appId=200121150436225";
               fjs.parentNode.insertBefore(js, fjs);
             }(document, 'script', 'facebook-jssdk'));</script>
 
-        <div> -->
+        <div>
           <div class="fb-login-button" data-max-rows="1" data-size="medium" data-show-faces="false" data-auto-logout-link="false"></div>
 
 
