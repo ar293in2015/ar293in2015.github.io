@@ -37,6 +37,14 @@
               FB.AppEvents.logPageView();
             };
 
+            FB.Event.subscribe('auth.login', function(){
+                window.location.href = 'index.html';
+            });
+
+            FB.Event.subscribe('auth.logout', function(){
+                window.location.href = 'index.html';
+            });
+
             (function(d, s, id){
                var js, fjs = d.getElementsByTagName(s)[0];
                if (d.getElementById(id)) {return;}
