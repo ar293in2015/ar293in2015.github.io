@@ -65,8 +65,8 @@
                     $("#fb-profile-picture").append('<img src="' + response.picture.data.url + '"> ');
                     $("#name").append(response.name);
                     $("#user-id").append(response.id);
-                    // $("#work").append(response.gender);
-                    // $("#birthday").append(response.birthday);
+                    $("#gender").append(response.gender);
+                    $("#email").append(response.email);
                     // $("#education").append(response.hometown);
                   }
               );
@@ -131,22 +131,23 @@
       </div>
 
         
-<!-- fb-profile-picture: --> <div id="fb-profile-picture"></div>
-<!-- name: --> <div id="name"></div>
-<!-- user-id: --> <div id="user-id"></div>
 
-<p>1) Click login</p>
+
+
 <!-- <div class="fb-login-button" data-scope="email,user_birthday,user_hometown,user_location" data-max-rows="1" data-size="medium" data-show-faces="false" data-auto-logout-link="false"></div>
  --><div class="fb-login-button" data-scope="email" data-max-rows="1" data-size="medium" data-show-faces="false" data-auto-logout-link="false"></div>
 
-<p>2) Click load data</p>
 <button id='loadData'>Load data</button>
+<!-- fb-profile-picture: --> <div id="fb-profile-picture"></div>
+<!-- name: --> <div id="name"></div>
+<!-- user-id: --> <div id="user-id"></div>
+<div id="gender"></div>
+<div id="email"></div>
 
         <div>
-          <div class="fb-login-button" data-max-rows="1" data-size="medium" data-show-faces="false" data-auto-logout-link="false"></div>
       <!-- END OF FACEBOOK LOGIN -->
 
-      <p><a class="black-text" href="dashboard.html">Login</a></p>
+      <p><a class="black-text" href="dashboard.html">View Dashboard</a></p>
     </div>
 
   <!--  Scripts-->
