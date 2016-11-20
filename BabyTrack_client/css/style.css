@@ -1,0 +1,159 @@
+/* Custom Stylesheet */
+/**
+ * Use this file to override Materialize files so you can update
+ * the core Materialize files in the future
+ *
+ * Made By MaterializeCSS.com
+ */
+
+html {
+  font-family: Questrial;
+  font-style: normal;
+  font-variant: normal;
+  font-size: 20px;
+}
+
+nav ul a,
+nav .brand-logo {
+  color: #444;
+}
+
+p {
+  line-height: 2rem;
+}
+
+.button-collapse {
+  color: #26a69a;
+}
+
+.parallax-container {
+  min-height: 15em;
+  line-height: 0;
+  height: auto;
+  color: rgba(255,255,255,.9);
+}
+  .parallax-container .section {
+    width: 100%;
+  }
+
+@media only screen and (max-width : 992px) {
+  .parallax-container .section {
+    position: absolute;
+    top: 40%;
+  }
+  #index-banner .section {
+    top: 10%;
+  }
+}
+
+@media only screen and (max-width : 600px) {
+  #index-banner .section {
+    top: 0;
+  }
+}
+
+.icon-block {
+  padding: 0 15px;
+}
+.icon-block .material-icons {
+  font-size: inherit;
+}
+
+footer.page-footer {
+  margin: 0;
+}
+
+#dashboard {
+  background-color: #eeeafb;
+  background: linear-gradient( 90deg, white, #eeeafb 40%, white );
+}
+
+
+
+/*chart*/
+
+#radialmenu {
+        /*font-family: 'stint ultra condensed', tahoma, sans-serif;*/
+        fill: #fff !important;
+    }
+
+.mouseover {
+        opacity: 0.5;
+    }
+
+    body > svg > text {
+        font-size: 60px;
+        fill: #fff;
+        /*font-family: 'stint ultra condensed', tahoma, sans-serif;*/
+    }
+
+#chat1 {
+  /*background-image: url('http://hybridtechcar.com/wp-content/uploads/2013/12/national-geographic-14.jpg');*/
+}
+
+
+
+
+#timelineChart .chart {
+  background: linear-gradient( 90deg, white, lightgray 40%, white );
+  width: 100%;
+  height: 17em;
+  font-size: 20px;
+}
+  .chart circle {
+    fill: #1E6EC6;
+    stroke: white;
+    stroke-width: 2px;
+    cursor: pointer;
+  }
+    .chart cirle:hover {
+      stroke: lightgrey;
+      stroke-width: 4px;
+      stroke-opacity: 0.8;
+    }
+  
+  .chart  line.midline {
+    stroke: darkgrey;
+    stroke-width: 2px;
+  }
+  .chart  line.timeframe {
+    stroke: black;
+    stroke-width: 2px;
+  }
+
+
+#timelineChart  .tooltip {
+  font-size: 24px;
+  position: absolute;
+  text-align: center;
+  padding: 10px;
+  background: white;
+  border: 1px solid steelblue;
+  border-radius: 8px;
+  pointer-events: none;
+  width: 150px;
+  z-index: 5;
+}
+  .tooltip  .down-arrow {
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-bottom: 5px solid steelblue;
+    left: 49px;
+    bottom: 62px;
+  }
+    .tooltip::before {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 0;
+      border-left: 4px solid transparent;
+      border-right: 4px solid transparent;
+      border-top: 4px solid white;
+      left: -4px;
+      bottom: 2px;
+    }
+  
+
