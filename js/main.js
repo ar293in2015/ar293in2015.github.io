@@ -303,7 +303,7 @@ function getOffset( el ) {
 
 $(document).ready(function() {
 	console.log("HELP");
-	function(d, s, id) {
+	(function(d, s, id) {
               console.log("fb test");
               var js, fjs = d.getElementsByTagName(s)[0];
               if (d.getElementById(id)) return;
