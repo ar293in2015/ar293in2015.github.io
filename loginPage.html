@@ -56,7 +56,11 @@
 
 
             // retrieve user data
-            function basicAPIRequest() {
+
+            FB.login(function(){
+              // Note: The call will only work if you accept the permission request
+              
+
               console.log('api request');
               FB.api('/me', 
                   {fields: "id,about,age_range,picture,context,email,first_name,gender,location,middle_name,name"}, 
@@ -70,7 +74,24 @@
                     // $("#education").append(response.hometown);
                   }
               );
-            }
+
+              );
+
+            // function basicAPIRequest() {
+            //   console.log('api request');
+            //   FB.api('/me', 
+            //       {fields: "id,about,age_range,picture,context,email,first_name,gender,location,middle_name,name"}, 
+            //       function(response) {
+            //         console.log('API response', response);
+            //         $("#fb-profile-picture").append('<img src="' + response.picture.data.url + '"> ');
+            //         $("#name").append(response.name);
+            //         $("#user-id").append(response.id);
+            //         // $("#work").append(response.gender);
+            //         // $("#birthday").append(response.birthday);
+            //         // $("#education").append(response.hometown);
+            //       }
+            //   );
+            // }
             jQuery(document).ready(function(){
               console.log("loading fb data");
               jQuery("#loadData").click(function(e){
