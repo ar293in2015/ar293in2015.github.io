@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en" ng-app = "app">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
+  <title>Wee Expectations</title>
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="js/materialize.js"></script>
+
+  <!-- CSS  -->
+  
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Questrial" />
+
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+  <script type="text/javascript" src='http://code.jquery.com/jquery-1.10.2.min.js'></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.16/d3.min.js" type="text/javascript" charset="utf-8"></script>
+    <link href='https://fonts.googleapis.com/css?family=Stint+Ultra+Condensed' rel='stylesheet' type='text/css'>
+   
+  
+<script type="text/javascript" src="js/main.js"></script>
+<!-- <script src="MAIN.js"></script> -->
+</head>
+<body>
+  <nav style="background-color:#D22A21" role="navigation">
+    <div class="nav-wrapper container">
+      <a class="white-text" id="logo-container" href="#" class="brand-logo">Wee Expectations</a>
+      <ul class="right hide-on-med-and-down">
+        <li><a class="white-text" href="anotherPage.html">About</a></li>
+      </ul>
+
+      <ul id="nav-mobile" class="side-nav">
+        <li><a href="#">About</a></li>
+      </ul>
+      <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+    </div>
+  </nav>
+
+  <div id="index-banner" class="parallax-container">
+    <div class="section no-pad-bot">
+      <div class="container">
+        <br><br>
+        <h1 class="header center black-text text-lighten-2">Wee Expectations</h1>
+        <!-- <img src="pic.png" alt=":D" style="margin-top:2em; width:13%; margin-left:7%; display:inline; z-index:2;"> -->
+        <!-- <img src="name.png" alt="CrazyFace" style="width:70%; display:inline; z-index:3; vertical-align:top;"> -->
+
+        <br><br>
+
+      </div>
+    </div>
+  </div>
+
+
+  <div  class="container">
+    <div  id = "dashboard" class="section">
+
+      <!--   Icon Section   -->
+      <div class="row">
+         <div ng-controller='dashboardController'>
+            <h1 class="center">Dashboard</h1>
+
+      </div>
+
+        <!-- FACEBOOK LOGIN -->
+          <div id="fb-root"></div>
+            <script>
+              window.fbAsyncInit = function() {
+                FB.init({
+                  appId      : '200121150436225',
+                  xfbml      : true,
+                  version    : 'v2.6'
+                });
+              };
+
+            (function(d, s, id) {
+              console.log("fb test");
+              var js, fjs = d.getElementsByTagName(s)[0];
+              if (d.getElementById(id)) return;
+              js = d.createElement(s); js.id = id;
+              js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8&appId=200121150436225";
+              fjs.parentNode.insertBefore(js, fjs);
+            }(document, 'script', 'facebook-jssdk'));</script>
+
+        <div>
+          <div class="fb-login-button" data-max-rows="1" data-size="medium" data-show-faces="false" data-auto-logout-link="false"></div>
+      <!-- END OF FACEBOOK LOGIN -->
+
+      <button><a class="black-text" href="dashboard.html">Login</a></button>
+    </div>
+
+  <!--  Scripts-->
+
+  </body>
+</html>
