@@ -32,12 +32,80 @@
 <!-- <script src="MAIN.js"></script> -->
 </head>
 <body>
-  <script>
-    var userInfo = loadUserData();
-    console.log("IN DASHBOARD");
-    console.log(userInfo);
+  
+  <div id="fb-root"></div>
+            <script>
 
-  </script>
+             window.fbAsyncInit = function() {
+              FB.init({
+                appId      : '200121150436225',
+                xfbml      : true,
+                cookies    : true,
+                version    : 'v2.8'
+              });
+              FB.AppEvents.logPageView();
+            };
+
+
+
+            (function(d, s, id){
+               var js, fjs = d.getElementsByTagName(s)[0];
+               if (d.getElementById(id)) {return;}
+               js = d.createElement(s); js.id = id;
+               js.src = "//connect.facebook.net/en_US/sdk.js";
+               fjs.parentNode.insertBefore(js, fjs);
+             }(document, 'script', 'facebook-jssdk'));
+             
+               
+              (function(d, s, id) {
+                var js, fjs = d.getElementsByTagName(s)[0];
+                if (d.getElementById(id)) return;
+                js = d.createElement(s); js.id = id;
+                js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8";
+                fjs.parentNode.insertBefore(js, fjs);
+              }(document, 'script', 'facebook-jssdk'));
+
+
+            // retrieve user data
+            function basicAPIRequest() {
+              console.log('api request');
+              FB.api('/me', 
+                  {fields: "id,about,age_range,picture,context,email,first_name,gender,location,middle_name,name"}, 
+                  function(response) {
+                    console.log('API response', response);
+                    $("#fb-profile-picture").append('<img src="' + response.picture.data.url + '"> ');
+                    $("#name").append(response.name);
+                    $("#user-id").append(response.id);
+                    $("#gender").append(response.gender);
+                    $("#email").append(response.email);
+                  }
+              );
+            }
+            jQuery(document).ready(function(){
+              console.log("loading fb data");
+              jQuery("#loadData").click(function(e){
+                if(typeof(FB) == "undefined") {
+                    alert("Facebook SDK not yet loaded please wait.")
+                  }
+                FB.getLoginStatus(function(response) {
+                  if (response.status === 'connected') {
+                    console.log('Logged in.');
+                    basicAPIRequest();
+
+                  }
+                  else {
+                    FB.login();
+                  }
+                });
+
+
+              });
+
+            });
+        </script>
+  
+
+
   <nav style="background-color:#D22A21" role="navigation">
     <div class="nav-wrapper container">
       <a class="white-text" id="logo-container" href="index.html" class="brand-logo">Wee Expectations</a>
