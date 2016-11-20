@@ -15,6 +15,7 @@
   <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
   <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Questrial" />
   <link rel="stylesheet" type="text/css" href="css/suburst_menu.css">
+  <link rel="stylesheet" type="text/css" href="css/inputStyle.css">
 
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
   <script type="text/javascript" src='http://code.jquery.com/jquery-1.10.2.min.js'></script>
@@ -30,177 +31,46 @@
 <!-- <script src="MAIN.js"></script> -->
 </head>
 <body>
+  <!--
   <nav style="background-color:#D22A21" role="navigation">
     <div class="nav-wrapper container">
-      <a class="white-text" id="logo-container" href="#" class="brand-logo">Wee Expectations</a>
+      <a class="white-text" id="logo-container" href="index.html" class="brand-logo">Wee Expectations</a>
       <ul class="right hide-on-med-and-down">
-        <li><a class="white-text" href="anotherPage.html">About</a></li>
+        <li><a class="white-text" href="loginPage.html">Login</a></li>
       </ul>
 
       <ul id="nav-mobile" class="side-nav">
-        <li><a href="#">About</a></li>
+        <li><a href="loginPage.html">Login</a></li>
       </ul>
       <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
     </div>
-  </nav>
-
-  <div id="index-banner" class="parallax-container">
-    <div class="section no-pad-bot">
-      <div class="container">
-        <br><br>
-        <h1 class="header center white-text text-lighten-2">Wee Expectations</h1>
-        <!-- <img src="pic.png" alt=":D" style="margin-top:2em; width:13%; margin-left:7%; display:inline; z-index:2;"> -->
-        <!-- <img src="name.png" alt="CrazyFace" style="width:70%; display:inline; z-index:3; vertical-align:top;"> -->
-
-        <br><br>
-
-      </div>
-    </div>
-    <div class="parallax"><img src="https://pbs.twimg.com/media/CkdPfnOXAAA5XI8.jpg" alt="Unsplashed background img 1"></div>
-  </div>
+  </nav> -->
 
 
-  <div  class="container">
-    <div  id = "dashboard" class="section">
+<ul>
+  <li><a class="active" href="#Home">Home</a></li>
+  <li><a href="inputPage.html">Today</a></li>
+  <li><a href="cal2.html">Calendar</a></li>
+  <li><a href="analytics.html">Analytics</a></li>
+  <li><a href="#risk">Risk Factors</a></li>
+  <li><a href="#sum">Physician Summary</a></li>
+</ul>
 
-      <!--   Icon Section   -->
-      <div class="row">
-         <div ng-controller='dashboardController'>
-            <h1 class="center">Dashboard</h1>
-          <!-- <form>
-              <h3>Dashboard</h3>
-              <input type='text' class = 'feedback-input' placeholder = 'Your Name' ng-model='newUser.name'>
-              <input type='submit' value='Connect' ng-click='start()'>
-          </form>
-    
-          <p>Name : <input type="text" ng-model="name"></p>
-          <h1>Hello {{name}}</h1> -->
+<center><h1>Wee Expectations</h1></center>
+<center><p>A pregnancy tracker for expecting mothers to track their health and connect to their physicians.</p>
 
+<img src="http://media.mnn.com/assets/images/2016/01/cute-baby.jpg.838x0_q80.jpg">
 
-     
+<a class = "ex1" href="loginPage.html"><div class = "loginbox">Login</div></a> 
 
-      </div>
+<p>
+  <br><br>
 
-
-
-<p> testing </p>
-          <div id="fb-root"></div>
-            <script>
-              window.fbAsyncInit = function() {
-                FB.init({
-                  appId      : '200121150436225',
-                  xfbml      : true,
-                  version    : 'v2.6'
-                });
-              };
-
-            (function(d, s, id) {
-              console.log("fb test");
-              var js, fjs = d.getElementsByTagName(s)[0];
-              if (d.getElementById(id)) return;
-              js = d.createElement(s); js.id = id;
-              js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8&appId=200121150436225";
-              fjs.parentNode.insertBefore(js, fjs);
-            }(document, 'script', 'facebook-jssdk'));</script>
-
-        <div>
-          <div class="fb-login-button" data-max-rows="1" data-size="medium" data-show-faces="false" data-auto-logout-link="false"></div>
-
-
-
-<p>hello</p>
-
-
-
-
-
-        <div class="col s6">
-          <div  id="chart1"  class="icon-block" style="height: 30em; padding-top: 0.5em; box-shadow: inset 3px 3px 14px rgba(0,0,0,0.6);">
-            <h3 class="center">Chart 1</h3>
-           
-          </div>
-        </div>
-
-        <div class="col s6">
-          <div class="icon-block" style="height: 30em; padding-top: 0.5em; box-shadow: inset 3px 3px 14px rgba(0,0,0,0.6);text-align:center;">
-            <h3 class="center">Stage in Pregnancy</h3>
-
-            <p style="margin:0; margin-bottom:2em; font-size:25px;">Description</p>
-            <svg id="fillgauge1" width="97%" height="13em" onclick="gauge1.update(NewValue());"></svg>
-          </div>
-        </div>
-   
-
-    <div style="color:transparent;">.</div>
-    <div style="color:transparent;">.</div>
-
-
-      </div>
-
-          <div id="timelineChart" style="height: 30em;  margin: 1em auto; padding: 1em; margin-bottom: 3em; text-align: center; padding-top: 0.5em; box-shadow: inset 3px 3px 14px rgba(0,0,0,0.6);">
-            <h3 class="center">Timeline for XXX</h3>
-            <!-- <h3 class="center" style="background:red;">Info: {{transactionInfo}}</h3> -->
-            <div style="margin-top:3em;" id="chart" onmousemove="getPos(event)" class="chart"></div>
-          </div>
-
-
-      </div>
-
-    </div>
-  </div>
-
-
-
-  <div class="parallax-container valign-wrapper">
-    <div class="section no-pad-bot">
-      <div class="container">
-        <div class="row center">
-          <h5 class="header col s12 light">Learn more about Wee Expectations</h5>
-        </div>
-      </div>
-    </div>
-    <div class="parallax"><img src="http://t.wallpaperweb.org/wallpaper/nature/1600x1200/Landscapes__Nice_Red_Sky.jpg" alt="Unsplashed background img 3"></div>
-  </div>
-
-  <footer class="page-footer" style="background-color:#1E6EC6">
-    <div class="container">
-      <div class="row">
-        <div class="col l6 s12">
-          <h5 class="white-text">About Us</h5>
-          <p class="grey-text text-lighten-4">We are a team of Duke students working on this project like it's our full time job.</p>
-
-
-        </div>
-        <div class="col l3 s12">
-          <h5 class="white-text">Team</h5>
-          <ul>
-            <li><a class="white-text" href="#!">Anika</a></li>
-            <li><a class="white-text" href="#!">Grace</a></li>
-            <li><a class="white-text" href="#!">Debbie</a></li>
-          </ul>
-        </div>
-        <div class="col l3 s12">
-          <h5 class="white-text">Role</h5>
-          <ul>
-            <li><a class="white-text" href="#!">Founder</a></li>
-            <li><a class="white-text" href="#!">Founder</a></li>
-             <li><a class="white-text" href="#!">Founder</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
+ 
     <div class="footer-copyright">
-      <div class="container">
-      HackDuke 2016 
-      </div>
+      HackDuke 2016 - Anika, Debbie, Grace
     </div>
   </footer>
-
-
-  <!--  Scripts-->
-  
-
-
 
   </body>
 </html>

@@ -1,9 +1,21 @@
-body {
+body{
     font-family: Helvetica;
 }
 
+.footer-copyright {
+    font-size: 18px;
+    font-family: Helvetica;
+    color: white;
+    background-color: #00BFFF;
+}
+
+
 h1 {
     font-size: 50px;
+}
+
+h5 { 
+    height: 300px;
 }
 
 button {
@@ -131,3 +143,14 @@ li a.active {
     color: white;
     background-color: #00BFFF;
 }
+
+.loginBox {
+    height: 100px;
+    width: 300px;
+    background-color: #00BFFF: 
+}
+
+#ex1 {
+    font-size:20px;
+}
+
