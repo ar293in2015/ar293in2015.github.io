@@ -11,26 +11,6 @@
 <body>
 <h1>Input Today's Data</h1>
 
-<!--
-<div class="container">
-<button onclick="document.getELementById('symp1').style.display='block'" class = "sympButton"> Blood Glucose </button>
-
-<div id="symp1" class = "modal">
-  <div class="modal-content">
-    <header class="container teal">
-      <span onclick="document.getElementById('symp1).style.display='none'" class="closebtn"> &times;
-      </span>
-      <h2> Blood Glucose </h2>
-      <div class="container">
-        <p>Input info: </p>
-      </div>
-      <footer class="container teal">
-        <p> Modal Footer </p>
-      </footer>
-    </div>
-  </div>
-</div> -->
-
 <!-- Trigger/Open The Modal -->
 <button id="symp1" class="sympBtn">Blood Glucose</button>
 <!-- The Modal -->
@@ -90,6 +70,109 @@
   </div>
 </div>
 
+<!-- Trigger/Open The Modal -->
+<button id="symp4" class="sympBtn">Headache</button>
+<!-- The Modal -->
+<div id="myModal4" class="modal">
+  <!-- Modal content -->
+  <div class="modal-content">
+    <div class="modal-header">
+    <span class="close">x</span>
+    <center><h2>Headache</h2></center>
+  </div>
+    <p>
+      <center>
+      <button type = "button" class ='sympLevel' onclick = "saveH0()"> None </button>
+      <button type = "button" class ='sympLevel' onclick = "saveH1()"> Low </button>
+      <button type = "button" class ='sympLevel' onclick = "saveH2()"> Medium </button>
+      <button type = "button" class ='sympLevel' onclick = "saveH3()"> High </button>
+    </center>
+    </p>
+  </div>
+</div>
+
+<!-- Trigger/Open The Modal -->
+<button id="symp5" class="sympBtn">Weight</button>
+<!-- The Modal -->
+<div id="myModal5" class="modal">
+  <!-- Modal content -->
+  <div class="modal-content">
+    <div class="modal-header">
+    <span class="close">x</span>
+    <center><h2>Weight</h2></center>
+  </div>
+    <p>
+      <center>
+      <input type = 'text' id='symp5Input' class='sympInput' placeholder = "Enter weight here (lbs)."> 
+      <button type = "button" class ='sympGo' onclick = "saveW()"> Go </button>
+    </center>
+    </p>
+  </div>
+</div>
+
+<!-- Trigger/Open The Modal -->
+<button id="symp6" class="sympBtn">Abdominal Pain</button>
+<!-- The Modal -->
+<div id="myModal6" class="modal">
+  <!-- Modal content -->
+  <div class="modal-content">
+    <div class="modal-header">
+    <span class="close">x</span>
+    <center><h2>Abdominal Pain</h2></center>
+  </div>
+    <p>
+      <center>
+      <button type = "button" class ='sympLevel' onclick = "saveAP0()"> None </button>
+      <button type = "button" class ='sympLevel' onclick = "saveAP1()"> Low </button>
+      <button type = "button" class ='sympLevel' onclick = "saveAP2()"> Medium </button>
+      <button type = "button" class ='sympLevel' onclick = "saveAP3()"> High </button>
+    </center>
+    </p>
+  </div>
+</div>
+
+<!-- Trigger/Open The Modal -->
+<button id="symp7" class="sympBtn">Nausea</button>
+<!-- The Modal -->
+<div id="myModal7" class="modal">
+  <!-- Modal content -->
+  <div class="modal-content">
+    <div class="modal-header">
+    <span class="close">x</span>
+    <center><h2>Nausea</h2></center>
+  </div>
+    <p>
+      <center>
+      <button type = "button" class ='sympLevel' onclick = "saveN0()"> None </button>
+      <button type = "button" class ='sympLevel' onclick = "saveN1()"> Low </button>
+      <button type = "button" class ='sympLevel' onclick = "saveN2()"> Medium </button>
+      <button type = "button" class ='sympLevel' onclick = "saveN3()"> High </button>
+    </center>
+    </p>
+  </div>
+</div>
+
+<!-- Trigger/Open The Modal -->
+<button id="symp8" class="sympBtn">Ankle Pressure</button>
+<!-- The Modal -->
+<div id="myModal8" class="modal">
+  <!-- Modal content -->
+  <div class="modal-content">
+    <div class="modal-header">
+    <span class="close">x</span>
+    <center><h2>Ankle Pressure</h2></center>
+  </div>
+    <p>
+      <center>
+      <button type = "button" class ='sympLevel' onclick = "saveAnk0()"> None </button>
+      <button type = "button" class ='sympLevel' onclick = "saveAnk1()"> Low </button>
+      <button type = "button" class ='sympLevel' onclick = "saveAnk2()"> Medium </button>
+      <button type = "button" class ='sympLevel' onclick = "saveAnk3()"> High </button>
+    </center>
+    </p>
+  </div>
+</div>
+
 
 <!--<p>
 <input type = 'text' id = 'testInput' placeholder = 'Enter your data here.'>
@@ -118,46 +201,132 @@
   //function
   function saveBG() {
     var data = symp1Input.value;
-    firebase.database().ref('/2016/11/18/BG').set( {
+    firebase.database().ref('/2016/11/20/BG').set( {
       Level: data});
     symp1Input.value = '';
   }
 
   function saveBP() {
     var data = symp2Input.value;
-    firebase.database().ref('/2016/11/18/BP').update( {
-      BP: data});
+    firebase.database().ref('/2016/11/20/BP').update( {
+      Level: data});
     symp2Input.value = '';
   }
 
   function saveBA0() {
-    firebase.database().ref('/2016/11/18/BA').update( {
-      BA: 'none'});
+    firebase.database().ref('/2016/11/20/BA').update( {
+      Level: 'none'});
     modal.style.display = "none";;
   }
   function saveBA1() {
-    firebase.database().ref('/2016/11/18/BA').update( {
-      BA: 'low'});
+    firebase.database().ref('/2016/11/20/BA').update( {
+      Level: 'low'});
     modal.style.display = "none";;
   }
   function saveBA2() {
-    firebase.database().ref('/2016/11/18/BA').update( {
-      BA: 'med'});
+    firebase.database().ref('/2016/11/20/BA').update( {
+      Level: 'med'});
     modal.style.display = "none";;
   }
   function saveBA3() {
-    firebase.database().ref('/2016/11/18/BA').update( {
-      BA: 'high'});
+    firebase.database().ref('/2016/11/20/BA').update( {
+      Level: 'High'});
+    modal.style.display = "none";;
+  }
+
+  function saveH0() {
+    firebase.database().ref('/2016/11/20/H').update( {
+      Level: 'none'});
+    modal.style.display = "none";;
+  }
+  function saveH1() {
+    firebase.database().ref('/2016/11/20/H').update( {
+      Level: 'low'});
+    modal.style.display = "none";;
+  }
+  function saveH2() {
+    firebase.database().ref('/2016/11/20/H').update( {
+      Level: 'med'});
+    modal.style.display = "none";;
+  }
+  function saveH3() {
+    firebase.database().ref('/2016/11/20/H').update( {
+      Level: 'High'});
+    modal.style.display = "none";;
+  }
+
+  function saveW() {
+    var data = symp5Input.value;
+    firebase.database().ref('/2016/11/20/W').set( {
+      Level: data});
+    symp5Input.value = '';
+  }
+
+  function saveAP0() {
+    firebase.database().ref('/2016/11/20/AP').update( {
+      Level: 'none'});
+    modal.style.display = "none";;
+  }
+  function saveAP1() {
+    firebase.database().ref('/2016/11/20/AP').update( {
+      Level: 'low'});
+    modal.style.display = "none";;
+  }
+  function saveAP2() {
+    firebase.database().ref('/2016/11/20/AP').update( {
+      Level: 'med'});
+    modal.style.display = "none";;
+  }
+  function saveAP3() {
+    firebase.database().ref('/2016/11/20/AP').update( {
+      Level: 'High'});
+    modal.style.display = "none";;
+  }
+
+  function saveN0() {
+    firebase.database().ref('/2016/11/20/N').update( {
+      Level: 'none'});
+    modal.style.display = "none";;
+  }
+  function saveN1() {
+    firebase.database().ref('/2016/11/20/N').update( {
+      Level: 'low'});
+    modal.style.display = "none";;
+  }
+  function saveN2() {
+    firebase.database().ref('/2016/11/20/N').update( {
+      Level: 'med'});
+    modal.style.display = "none";;
+  }
+  function saveN3() {
+    firebase.database().ref('/2016/11/20/N').update( {
+      Level: 'High'});
+    modal.style.display = "none";;
+  }
+
+  function saveAnk0() {
+    firebase.database().ref('/2016/11/20/Ank').update( {
+      Level: 'none'});
+    modal.style.display = "none";;
+  }
+  function saveAnk1() {
+    firebase.database().ref('/2016/11/20/Ank').update( {
+      Level: 'low'});
+    modal.style.display = "none";;
+  }
+  function saveAnk2() {
+    firebase.database().ref('/2016/11/20/Ank').update( {
+      Level: 'med'});
+    modal.style.display = "none";;
+  }
+  function saveAnk3() {
+    firebase.database().ref('/2016/11/20/Ank').update( {
+      Level: 'High'});
     modal.style.display = "none";;
   }
 
 
-  function savedata() {
-    var message = testInput.value;
-    firebase.database().ref('/').set( {
-      testInput: message});
-    testInput.value = '';
-  }
+  
 </script>
 <script>
 var modal = null;
@@ -165,6 +334,11 @@ var modal = null;
 var btn1 = document.getElementById("symp1");
 var btn2 = document.getElementById("symp2");
 var btn3 = document.getElementById("symp3");
+var btn4 = document.getElementById("symp4");
+var btn5 = document.getElementById("symp5");
+var btn6 = document.getElementById("symp6");
+var btn7 = document.getElementById("symp7");
+var btn8 = document.getElementById("symp8");
 // Get the <span> element that closes the modal
 var span = document.getElementsByClassName("close")[0];
 // When the user clicks on the button, open the modal 
@@ -178,6 +352,30 @@ btn2.onclick = function() {
 }
 btn3.onclick = function() {
     modal = document.getElementById('myModal3');
+    modal.style.display = "block";
+}
+
+btn4.onclick = function() {
+    modal = document.getElementById('myModal4');
+    modal.style.display = "block";
+}
+
+btn5.onclick = function() {
+    modal = document.getElementById('myModal5');
+    modal.style.display = "block";
+}
+
+btn6.onclick = function() {
+    modal = document.getElementById('myModal6');
+    modal.style.display = "block";
+}
+
+btn7.onclick = function() {
+    modal = document.getElementById('myModal7');
+    modal.style.display = "block";
+}
+btn8.onclick = function() {
+    modal = document.getElementById('myModal8');
     modal.style.display = "block";
 }
 
@@ -195,3 +393,5 @@ window.onclick = function(event) {
 
 </body>
 </html>
+
+
