@@ -24,40 +24,7 @@
 <!-- <script src="MAIN.js"></script> -->
 </head>
 <body>
-  <nav style="background-color:#D22A21" role="navigation">
-    <div class="nav-wrapper container">
-      <a class="white-text" id="logo-container" href="index.html" class="brand-logo">Wee Expectations</a>
-      
-     
-      <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
-    </div>
-  </nav>
-
-  <div id="index-banner" class="parallax-container">
-    <div class="section no-pad-bot">
-      <div class="container">
-        <br><br>
-        <h1 class="header center black-text text-lighten-2">Wee Expectations</h1>
-   
-
-        <br><br>
-
-      </div>
-    </div>
-  </div>
-
-
-  <div  class="container">
-    <div  id = "dashboard" class="section">
-
-      <!--   Icon Section   -->
-      <div class="row">
-         <div ng-controller='dashboardController'>
-            <h2 class="center">Login</h2>
-
-      </div>
-
-        <!-- FACEBOOK LOGIN -->
+<!-- FACEBOOK LOGIN -->
           <div id="fb-root"></div>
             <script>
               window.fbAsyncInit = function() {
@@ -68,23 +35,23 @@
                 });
               };
 
-               (function(d, s, id){
-                 var js, fjs = d.getElementsByTagName(s)[0];
-                 if (d.getElementById(id)) {return;}
-                 js = d.createElement(s); js.id = id;
-                 js.src = "//connect.facebook.net/en_US/sdk.js";
-                 fjs.parentNode.insertBefore(js, fjs);
-               }(document, 'script', 'facebook-jssdk'));
+               // (function(d, s, id){
+               //   var js, fjs = d.getElementsByTagName(s)[0];
+               //   if (d.getElementById(id)) {return;}
+               //   js = d.createElement(s); js.id = id;
+               //   js.src = "//connect.facebook.net/en_US/sdk.js";
+               //   fjs.parentNode.insertBefore(js, fjs);
+               // }(document, 'script', 'facebook-jssdk'));
 
 
-            // (function(d, s, id) {
-            //   console.log("fb test");
-            //   var js, fjs = d.getElementsByTagName(s)[0];
-            //   if (d.getElementById(id)) return;
-            //   js = d.createElement(s); js.id = id;
-            //   js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8&appId=200121150436225";
-            //   fjs.parentNode.insertBefore(js, fjs);
-            // }(document, 'script', 'facebook-jssdk'));
+            (function(d, s, id) {
+              console.log("fb test");
+              var js, fjs = d.getElementsByTagName(s)[0];
+              if (d.getElementById(id)) return;
+              js = d.createElement(s); js.id = id;
+              js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2";
+              fjs.parentNode.insertBefore(js, fjs);
+            }(document, 'script', 'facebook-jssdk'));
 
 
             // retrieve user data
@@ -121,6 +88,46 @@
 
             });
         </script>
+        <!-- END OF FACEBOOK LOGIN SCRIPT -->
+
+
+
+
+
+  <nav style="background-color:#D22A21" role="navigation">
+    <div class="nav-wrapper container">
+      <a class="white-text" id="logo-container" href="index.html" class="brand-logo">Wee Expectations</a>
+      
+     
+      <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+    </div>
+  </nav>
+
+  <div id="index-banner" class="parallax-container">
+    <div class="section no-pad-bot">
+      <div class="container">
+        <br><br>
+        <h1 class="header center black-text text-lighten-2">Wee Expectations</h1>
+   
+
+        <br><br>
+
+      </div>
+    </div>
+  </div>
+
+
+  <div  class="container">
+    <div  id = "dashboard" class="section">
+
+      <!--   Icon Section   -->
+      <div class="row">
+         <div ng-controller='dashboardController'>
+            <h2 class="center">Login</h2>
+
+      </div>
+
+        
 <!-- fb-profile-picture: --> <div id="fb-profile-picture"></div>
 <!-- name: --> <div id="name"></div>
 <!-- user-id: --> <div id="user-id"></div>
