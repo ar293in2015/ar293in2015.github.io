@@ -27,9 +27,17 @@
    <script src="http://d3js.org/d3.v3.min.js" language="JavaScript"></script>
    <script type="text/javascript" src="js/liquidFillGauge.js"></script>
 <script type="text/javascript" src="js/main.js"></script>
+<script type="text/javascript" src="js/userData.js"></script>
+
 <!-- <script src="MAIN.js"></script> -->
 </head>
 <body>
+  <script>
+    var userInfo = loadUserData();
+    console.log("IN DASHBOARD");
+    console.log(userInfo);
+
+  </script>
   <nav style="background-color:#D22A21" role="navigation">
     <div class="nav-wrapper container">
       <a class="white-text" id="logo-container" href="index.html" class="brand-logo">Wee Expectations</a>

@@ -19,7 +19,8 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.16/d3.min.js" type="text/javascript" charset="utf-8"></script>
     <link href='https://fonts.googleapis.com/css?family=Stint+Ultra+Condensed' rel='stylesheet' type='text/css'>
    
-  
+  <script type="text/javascript" src="js/userData.js"></script>
+
 <!-- <script type="text/javascript" src="js/main.js"></script> -->
 <!-- <script src="MAIN.js"></script> -->
 </head>
@@ -70,6 +71,7 @@
                     $("#user-id").append(response.id);
                     $("#gender").append(response.gender);
                     $("#email").append(response.email);
+                    saveData(response);
                     // $("#education").append(response.hometown);
                   }
               );
