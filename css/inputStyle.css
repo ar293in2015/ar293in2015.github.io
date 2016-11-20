@@ -22,6 +22,15 @@ button {
     margin:10px 5px;
 }
 
+button:hover:not(.active) {
+    background-color: #00a9e2;
+}
+
+button.active {
+    color: white;
+    background-color: #00BFFF;
+}
+
 .sympGo {
     height: 28px;
     font-size: 20px;
