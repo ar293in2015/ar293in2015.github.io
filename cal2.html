@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+* {box-sizing:border-box;}
+ul {list-style-type: none;}
+body {font-family: Verdana,sans-serif;}
+
+.month {
+    padding: 70px 40px;
+    width: 100%;
+    background-image: url("https://s-media-cache-ak0.pinimg.com/originals/cf/99/52/cf9952283cc31644d32423380053a024.jpg");
+}
+
+.month ul {
+    margin: 0;
+    padding: 0;
+}
+
+.month ul li {
+    color: white;
+    font-size: 30px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 40px;
+}
+
+.month .prev {
+    float: left;
+    padding-top: 10px;
+}
+
+.month .next {
+    float: right;
+    padding-top: 10px;
+}
+
+.weekdays {
+    margin: 0;
+    padding: 10px 0;
+    background-color: #ddd;
+    font-size: 30px;
+}
+
+.weekdays li {
+    display: inline-block;
+    width: 13.25%;
+    color: #666;
+    text-align: center;
+}
+
+.days {
+    padding: 10px 0;
+    background: #eee;
+    margin: 0;
+}
+
+.days button {
+    list-style-type: none;
+    display: inline-block;
+    width: 13.6%;
+    text-align: center;
+    margin-bottom: 5px;
+    font-size:12px;
+    color: #777;
+    background: #eee;
+    font-size: 20px;
+}
+
+.days li .active {
+    padding: 5px;
+    background: #1abc9c;
+    color: white !important
+}
+
+
+.button {
+    background-color: #000066;
+    border: none;
+    color: white;
+    padding: 2px 2px;
+    font-size: 300px;
+}
+
+
+ul.top {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #f3f3f3;
+}
+
+
+li.top {
+    float: left;
+    height:;
+}
+
+
+li.top a {
+    display: block;
+    color: #666;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+
+li.top a:hover:not(.active) {
+    background-color: #ddd;
+}
+
+
+li.top a.active {
+    color: white;
+    background-color: #00BFFF;
+}
+
+
+/* Add media queries for smaller screens */
+@media screen and (max-width:720px) {
+    .weekdays li, .days li {width: 13.1%;}
+}
+
+@media screen and (max-width: 420px) {
+    .weekdays li, .days li {width: 12.5%;}
+    .days li .active {padding: 2px;}
+}
+
+@media screen and (max-width: 290px) {
+    .weekdays li, .days li {width: 12.2%;}
+}
+</style>
+</head>
+<body>
+
+<ul class="top">
+  <li class="top"><a href="inputPage.html">Today</a></li>
+  <li class="top"><a class="active" href="cal2.html">Calendar</a></li>
+  <li class="top"><a href="analytics.html">Analytics</a></li>
+  <li class="top"><a href="#risk">Risk Factors</a></li>
+  <li class="top"><a href="#sum">Physician Summary</a></li>
+</ul>
+
+<br>
+
+<h1 style="color:darkblue;">Expectancy Calendar</h1>
+
+<div class="month">
+  <ul>
+    <li class="prev"><</li>
+    <li class="next">></li>
+    <li style="text-align:center">
+      November<br>
+      <span style="font-size:25px">2016</span>
+    </li>
+  </ul>
+</div>
+
+<ul class="weekdays">
+  <li>Mo</li>
+  <li>Tu</li>
+  <li>We</li>
+  <li>Th</li>
+  <li>Fr</li>
+  <li>Sa</li>
+  <li>Su</li>
+</ul>
+
+<ul class="days">
+  <button class="button"></button>
+  <button class="button" id="myBtn">1</button>
+  <button class="button" id="myBtn2">2</button>
+  <button class="button" id="myBtn3">3</button>  
+  <button class="button" id="myBtn4">4</button>
+  <button class="button" id="myBtn5">5</button>
+  <button class="button" id="myBtn6">6</button>
+  <button class="button" id="myBtn7">7</button>
+  <button class="button" id="myBtn8">8</button>
+  <button class="button" id="myBtn9">9</button>
+  <button class="button">10</button>
+  <button class="button">11</button>
+  <button class="button">12</button>
+  <button class="button">13</button>
+  <button class="button">14</button>
+  <button class="button">15</button>
+  <button class="button">16</button>
+  <button class="button">17</button>
+  <button class="button">18</button>
+  <button class="button">19</button>
+  <button class="button" id="myBtn20">20</button>
+  <button class="button">21</button>
+  <button class="button">22</button>
+  <button class="button">23</button>
+  <button class="button">24</button>
+  <button class="button">25</button>
+  <button class="button">26</button>
+  <button class="button">27</button>
+  <button class="button">28</button>
+  <button class="button">29</button>
+  <button class="button">30</button>
+</ul>
+
+
+<style>
+body {font-family: Verdana,sans-serif;}
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.3); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+    position: relative;
+    background-image: url("http://media02.hongkiat.com/baby_photography/Eco-Baby-photography.jpg");
+    font-size: 12px;
+    margin: auto;
+    padding: 0;
+    border: 1px solid #fefefe;
+    width: 50%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s
+}
+
+/* Add Animation */
+@-webkit-keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+}
+
+@keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+}
+
+/* The Close Button */
+.close {
+    color: white;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-header {
+    padding: 2px 16px;
+    background-color: #000066;
+    color: white;
+    font-size: 12px;
+}
+
+.modal-body {padding: 2px 16px;}
+
+.modal-footer {
+    padding: 2px 16px;
+    background-color: #000066;
+    color: white;
+    font-size: 11px;
+}
+</style>
+</head>
+<body>
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+  <div class="modal-content">
+    <div class="modal-header">
+      <span class="close">x</span>
+      <h1>Results summary:</h1>
+    </div>
+    <div class="modal-body">
+      <p> we're pulling more from Analytics</p>
+    </div>
+    <div class="modal-footer">
+      <h2>Remember to check your overall progress in  Analytics!</h2>
+    </div>
+  </div>
+
+</div>
+
+
+<div id="myModal2" class="modal">
+  <div class="modal-content">
+    <div class="modal-header">
+      <span2 class="close">x</span2>
+      <h1>Here are your results from this day:</h1>
+    </div>
+    <div class="modal-body">
+      <p> we're pulling more from Analytics</p>
+    </div>
+    <div class="modal-footer">
+      <h2>Remember to check your overall progress in  Analytics!</h2>
+    </div>
+  </div>
+
+</div>
+
+<div id="myModal3" class="modal">
+  <div class="modal-content">
+    <div class="modal-header">
+      <span2 class="close">x</span2>
+      <h1>Here are your results from this day:</h1>
+    </div>
+    <div class="modal-body">
+      <p> we're pulling more from Analytics</p>
+    </div>
+    <div class="modal-footer">
+      <h2>Remember to check your overall progress in  Analytics!</h2>
+    </div>
+  </div>
+
+
+</div>
+
+<div id="myModal4" class="modal">
+  <div class="modal-content">
+    <div class="modal-header">
+      <span2 class="close">x</span2>
+      <h1>Here are your results from this day:</h1>
+    </div>
+    <div class="modal-body">
+      <p> we're pulling more from Analytics</p>
+    </div>
+    <div class="modal-footer">
+      <h2>Remember to check your overall progress in  Analytics!</h2>
+    </div>
+  </div>
+
+</div>
+
+<div id="myModal5" class="modal">
+  <div class="modal-content">
+    <div class="modal-header">
+      <span2 class="close">x</span2>
+      <h1>Here are your results from this day:</h1>
+    </div>
+    <div class="modal-body">
+      <p> we're pulling more from Analytics</p>
+    </div>
+    <div class="modal-footer">
+      <h2>Remember to check your overall progress in  Analytics!</h2>
+    </div>
+  </div>
+
+</div>
+
+<div id="myModal6" class="modal">
+  <div class="modal-content">
+    <div class="modal-header">
+      <span2 class="close">x</span2>
+      <h1>Here are your results from this day:</h1>
+    </div>
+    <div class="modal-body">
+      <p> we're pulling more from Analytics</p>
+    </div>
+    <div class="modal-footer">
+      <h2>Remember to check your overall progress in  Analytics!</h2>
+    </div>
+  </div>
+
+</div>
+
+<div id="myModal7" class="modal">
+  <div class="modal-content">
+    <div class="modal-header">
+      <span2 class="close">x</span2>
+      <h1>Here are your results from this day:</h1>
+    </div>
+    <div class="modal-body">
+      <p> we're pulling more from Analytics</p>
+    </div>
+    <div class="modal-footer">
+      <h2>Remember to check your overall progress in  Analytics!</h2>
+    </div>
+  </div>
+
+</div>
+
+<div id="myModal8" class="modal">
+  <div class="modal-content">
+    <div class="modal-header">
+      <span2 class="close">x</span2>
+      <h1>Here are your results from this day:</h1>
+    </div>
+    <div class="modal-body">
+      <p> we're pulling more from Analytics</p>
+    </div>
+    <div class="modal-footer">
+      <h2>Remember to check your overall progress in  Analytics!</h2>
+    </div>
+  </div>
+
+</div>
+
+<div id="myModal9" class="modal">
+  <div class="modal-content">
+    <div class="modal-header">
+      <span2 class="close">x</span2>
+      <h1>Here are your results from this day:</h1>
+    </div>
+    <div class="modal-body">
+      <p> we're pulling more from Analytics</p>
+    </div>
+    <div class="modal-footer">
+      <h2>Remember to check your overall progress in  Analytics!</h2>
+    </div>
+  </div>
+
+</div>
+
+<div id="myModal20" class="modal">
+  <div class="modal-content">
+    <div class="modal-header">
+      <span2 class="close">x</span2>
+      <h1>Here are your results from this day:</h1>
+    </div>
+    <div class="modal-body">
+      <p id="BG01"></p>
+      <p id="BP01"></p>
+      <p id="BA"></p>
+      <p id="AP"></p>
+      <p id="H"></p>
+      <p id="N"></p>
+      <p id="ANK"></p>
+      <p id="W"></p>
+    </div>
+    <div class="modal-footer">
+      <h2>Remember to check your overall progress in  Analytics!</h2>
+    </div>
+  </div>
+
+</div>
+<script src="https://www.gstatic.com/firebasejs/3.6.1/firebase.js"> 
+</script>
+<script>
+
+
+// Get the modal
+var modal = document.getElementById('myModal');
+// Get the button that opens the modal
+var btn = document.getElementById("myBtn");
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+// When the user clicks the button, open the modal
+
+btn.onclick = function() {
+    modal.style.display = "block";
+}
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+    modal.style.display = "none";
+}
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+
+
+var modal2 = document.getElementById('myModal2');
+var btn2 = document.getElementById("myBtn2");
+var span2 = document.getElementsByClassName("close")[1];
+btn2.onclick = function() {
+    modal2.style.display = "block";
+}
+span2.onclick = function() {
+    modal2.style.display = "none";
+}
+window.onclick = function(event) {
+    if (event.target == modal2) {
+        modal2.style.display = "none";
+    }
+}
+
+
+var modal3 = document.getElementById('myModal3');
+var btn3 = document.getElementById("myBtn3");
+var span3 = document.getElementsByClassName("close")[2];
+btn3.onclick = function() {
+    modal3.style.display = "block";
+}
+span3.onclick = function() {
+    modal3.style.display = "none";
+}
+window.onclick = function(event) {
+    if (event.target == modal2) {
+        modal3.style.display = "none";
+    }
+}
+
+var modal4 = document.getElementById('myModal4');
+var btn4 = document.getElementById("myBtn4");
+var span4 = document.getElementsByClassName("close")[3];
+btn4.onclick = function() {
+    modal4.style.display = "block";
+}
+span4.onclick = function() {
+    modal4.style.display = "none";
+}
+window.onclick = function(event) {
+    if (event.target == modal4) {
+        modal4.style.display = "none";
+    }
+}
+
+var modal5 = document.getElementById('myModal5');
+var btn5 = document.getElementById("myBtn5");
+var span5 = document.getElementsByClassName("close")[4];
+btn5.onclick = function() {
+    modal5.style.display = "block";
+}
+span5.onclick = function() {
+    modal5.style.display = "none";
+}
+window.onclick = function(event) {
+    if (event.target == modal5) {
+        modal5.style.display = "none";
+    }
+}
+
+var modal6 = document.getElementById('myModal6');
+var btn6 = document.getElementById("myBtn6");
+var span6 = document.getElementsByClassName("close")[5];
+btn6.onclick = function() {
+    modal6.style.display = "block";
+}
+span6.onclick = function() {
+    modal6.style.display = "none";
+}
+window.onclick = function(event) {
+    if (event.target == modal6) {
+        modal6.style.display = "none";
+    }
+}
+
+var modal7 = document.getElementById('myModal7');
+var btn7 = document.getElementById("myBtn7");
+var span7 = document.getElementsByClassName("close")[6];
+btn7.onclick = function() {
+    modal7.style.display = "block";
+}
+span7.onclick = function() {
+    modal7.style.display = "none";
+}
+window.onclick = function(event) {
+    if (event.target == modal7) {
+        modal7.style.display = "none";
+    }
+}
+
+var modal8 = document.getElementById('myModal8');
+var btn8 = document.getElementById("myBtn8");
+var span8 = document.getElementsByClassName("close")[7];
+btn8.onclick = function() {
+    modal8.style.display = "block";
+}
+span8.onclick = function() {
+    modal8.style.display = "none";
+}
+window.onclick = function(event) {
+    if (event.target == modal8) {
+        modal8.style.display = "none";
+    }
+}
+
+var modal9 = document.getElementById('myModal9');
+var btn9 = document.getElementById("myBtn9");
+var span9 = document.getElementsByClassName("close")[8];
+btn9.onclick = function() {
+    modal9.style.display = "block";
+}
+span9.onclick = function() {
+    modal9.style.display = "none";
+}
+window.onclick = function(event) {
+    if (event.target == modal9) {
+        modal9.style.display = "none";
+    }
+}
+
+
+
+
+  var config = {
+    apiKey: "AIzaSyDNBhOMl2iCtBJyDau40cQhNeC6wZYlh80",
+    authDomain: "babytracker-df5b5.firebaseapp.com",
+    databaseURL: "https://babytracker-df5b5.firebaseio.com",
+    storageBucket: "",
+    messagingSenderId: "539628780635"
+  };
+  firebase.initializeApp(config);
+
+
+var database = firebase.database();
+
+window.onload = function() {
+  var ref = database.ref('2016/');
+  ref.on("value", function(snapshot) {
+    console.log(snapshot.val()); // here's your data object
+})}
+
+
+var modal20 = document.getElementById('myModal20');
+var btn20 = document.getElementById("myBtn20");
+var span20 = document.getElementsByClassName("close")[9];
+btn20.onclick = function() {
+    var BG01='0';
+    var BP01='0';
+    var BA='0';
+    var ref = database.ref('2016/11/20/');
+    ref.child('BG/').on("value", function(snapshot) {
+    // console.log(snapshot.val()); // here's your data object
+      BG01="Blood Glucose: "+ snapshot.val().Level;
+    // document.write(BG01);
+      var el = document.getElementById("BG01");
+      el.innerHTML = BG01;
+    });
+    ref.child('BP/').on("value", function(snapshot) {
+    // console.log(snapshot.val()); // here's your data object
+      BP01="Blood Pressure: " + snapshot.val().Level;
+    // document.write(BG01);
+      var el = document.getElementById("BP01");
+    el.innerHTML = BP01;
+    });
+    ref.child('BA/').on("value", function(snapshot) {
+    // console.log(snapshot.val()); // here's your data object
+      BA="Baby Activity: "+ snapshot.val().Level;
+    // document.write(BG01);
+      var el = document.getElementById("BA");
+    el.innerHTML = BA;
+    });
+    ref.child('H/').on("value", function(snapshot) {
+    // console.log(snapshot.val()); // here's your data object
+      H="Headache: "+snapshot.val().Level;
+    // document.write(BG01);
+      var el = document.getElementById("H");
+    el.innerHTML = H;
+    });
+    ref.child('N/').on("value", function(snapshot) {
+    // console.log(snapshot.val()); // here's your data object
+      N="Nausea: "+snapshot.val().Level;
+    // document.write(BG01);
+      var el = document.getElementById("N");
+    el.innerHTML = N;
+    });
+    ref.child('AP/').on("value", function(snapshot) {
+    // console.log(snapshot.val()); // here's your data object
+      AP="Abdominal Pain: "+snapshot.val().Level;
+    // document.write(BG01);
+      var el = document.getElementById("AP");
+    el.innerHTML = AP;
+    });
+    ref.child('W/').on("value", function(snapshot) {
+    // console.log(snapshot.val()); // here's your data object
+      W="Weight: "+snapshot.val().Level;
+    // document.write(BG01);
+      var el = document.getElementById("W");
+    el.innerHTML = W;
+    });
+    ref.child('Ank/').on("value", function(snapshot) {
+    // console.log(snapshot.val()); // here's your data object
+      ANK="Ankle Pressure: "+snapshot.val().Level;
+    // document.write(BG01);
+      var el = document.getElementById("ANK");
+    el.innerHTML = ANK;
+    });
+    modal20.style.display = "block";
+}
+span20.onclick = function() {
+    modal20.style.display = "none";
+}
+window.onclick = function(event) {
+    if (event.target == modal20) {
+        modal20.style.display = "none";
+    }
+}
+
+
+
+</script>
+
+</body>
+</html>
