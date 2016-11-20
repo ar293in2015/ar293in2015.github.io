@@ -65,7 +65,6 @@
                   {fields: "id,about,age_range,picture,context,email,first_name,gender,location,middle_name,name"}, 
                   function(response) {
                     console.log('API response', response);
-                    $scope.userData = response;
                     $("#fb-profile-picture").append('<img src="' + response.picture.data.url + '"> ');
                     $("#name").append(response.name);
                     $("#user-id").append(response.id);
