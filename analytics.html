@@ -3,8 +3,11 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
+  <link rel="stylesheet" type="text/css" href="css/circle.css">
+<script type="text/javascript" src="js/progressCircle.js"></script>
   <link rel="stylesheet" type="text/css" href="css/inputStyle.css">
 <script type="text/javascript" src="js/analyticsChart1.js"></script>
+<script type="text/javascript" src="js/canvasjs.min.js"></script></head>
 
   <title>Wee Expectations</title>
 
@@ -21,11 +24,17 @@
 
 <center><h1>Dashboard</h1></center>
 
-<script type="text/javascript" src="js/canvasjs.min.js"></script></head>
 
-<div style="height: 25em;  margin: 3em 5em; padding: 1em; margin-bottom: 1em; text-align: center; padding-top: 0.5em; box-shadow: inset 3px 3px 14px rgba(0,0,0,0.6);">
+
+
+<div style="height: 25em;  width: 35%; margin: 1em 5em; padding: 1em 25%; margin-bottom: 1em; text-align: center; padding-top: 0.5em; box-shadow: inset 3px 3px 14px rgba(0,0,0,0.6);">
+            <h3 class="center">Pregnancy progress</h3>
+             <div class="chart" id="graph" ></div>
+          </div>
+
+<div style="height: 30em;  width:85%; margin: 3em 5em;  margin-bottom: 1em; text-align: center; padding-top: 0.5em; box-shadow: inset 3px 3px 14px rgba(0,0,0,0.6);">
             <h3 class="center">Blood Glucose Level per Day</h3>
-             <div id="chartContainer" style="height: 300px; width: 100%;"></div>
+             <div id="chartContainer" style="height: 300px; width: 70%;"></div>
              <div style = "position: absolute; left: 6.5em; top: 34.2em; background: white; color: white">hellothere</div>
           </div>
 
