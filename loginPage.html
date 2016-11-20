@@ -32,6 +32,7 @@
               FB.init({
                 appId      : '200121150436225',
                 xfbml      : true,
+                cookies    : true,
                 version    : 'v2.8'
               });
               FB.AppEvents.logPageView();
@@ -64,6 +65,7 @@
                   {fields: "id,about,age_range,picture,context,email,first_name,gender,location,middle_name,name"}, 
                   function(response) {
                     console.log('API response', response);
+                    $scope.userData = response;
                     $("#fb-profile-picture").append('<img src="' + response.picture.data.url + '"> ');
                     $("#name").append(response.name);
                     $("#user-id").append(response.id);
@@ -83,6 +85,7 @@
                   if (response.status === 'connected') {
                     console.log('Logged in.');
                     basicAPIRequest();
+                    window.location.href = 'index.html';
 
                   }
                   else {
@@ -146,7 +149,7 @@
 
 
 <!-- <div class="fb-login-button" data-scope="email,user_birthday,user_hometown,user_location" data-max-rows="1" data-size="medium" data-show-faces="false" data-auto-logout-link="false"></div>
- --><div class="fb-login-button" data-scope="email" data-max-rows="1" data-size="medium" data-show-faces="false" data-auto-logout-link="false"></div>
+ --><div class="fb-login-button" data-scope="email" data-max-rows="1" data-size="medium" data-show-faces="false" data-auto-logout-link="true"></div>
 
 <button id='loadData'>Load data</button>
 <!-- fb-profile-picture: --> <div id="fb-profile-picture"></div>
