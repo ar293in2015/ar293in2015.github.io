@@ -302,16 +302,7 @@ function getOffset( el ) {
 }
 
 $(document).ready(function() {
-	console.log("HELP");
-	// (function(d, s, id) {
- //              console.log("fb test");
- //              var js, fjs = d.getElementsByTagName(s)[0];
- //              if (d.getElementById(id)) return;
- //              js = d.createElement(s); js.id = id;
- //              js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8";
- //              fjs.parentNode.insertBefore(js, fjs);
- //            }(document, 'script', 'facebook-jssdk'));
-	// console.log("done with fb");
+	
 
 	var mousePosX, mousePosY;
 
@@ -324,9 +315,5 @@ $(document).ready(function() {
     config1.circleThickness = 0.2;
     config1.textVertPosition = 0.2;
     config1.waveAnimateTime = 4000;
-
-
-
-
 
 });
