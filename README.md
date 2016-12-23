@@ -20,6 +20,6 @@ Things work! (Mostly) We’re especially proud to have worked on something that 
 We will be adding more features in the near future. Firstly, we will add a Risk Factors page that will include targeted information for the user given her past symptoms, age, weight and other factors. Further, we will add a physician summary page that provides a succinct overview of the woman’s health status and personal information retrieved in part from facebook. This page can then be downloaded as a pdf and printed by the user or accessed by the physician via a separate physician login. This page will also allow the physician to leave notes for the patient.
 
 ## Team
-Grace Ying
-Anika Radiya-Dixit
-Debbie Burdinski
+* Grace Ying
+* Anika Radiya-Dixit
+* Debbie Burdinski
